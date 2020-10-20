@@ -8,6 +8,8 @@
 // console.log(range(1,10))
 // console.log(range(5,2,-1))
 
+const { number } = require("yargs");
+
 // function sum(arr) {
 //     let sum = 0
 //     for(let i = 0; i < arr.length; i++) {
@@ -18,25 +20,22 @@
 // console.log(sum(range(1,10)))
 
 // Reversing an array
-// function reverseArray(arr) {
-//     const newArr = []
-//     for (let i = arr.length - 1; i >= 0; i--) {
-//         newArr.push(arr[i])
-//     }
-//     return newArr
-// }
-// console.log(reverseArray(["A", "B", "C"]));
+function reverseArray(arr) {
+    const newArr = []
+    for (let i = arr.length - 1; i >= 0; i--) {
+        newArr.push(arr[i])
+    }
+    return newArr
+}
 
 // Reverse array in place
 function reverseArrayInPlace (arr) {
-    for (let i = 0; i < arr.length; i++) {
-        
+    for (let i = 0; i < arr.length / 2; i++) {
+        let lastIndex = arr.length - 1 - i
+        let temp = arr[i]
+        arr[i] = arr[lastIndex]
+        arr[lastIndex] = temp
     }
-
 }
-
-let arr = [1, 2, 3, 4, 5];
-reverseArrayInPlace(arr);
-console.log(arr);
 
 exports.reverseArrayInPlace = reverseArrayInPlace
