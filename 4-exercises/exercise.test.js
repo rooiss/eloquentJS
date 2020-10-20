@@ -1,4 +1,3 @@
-const { expect, it } = require("@jest/globals")
 const { reverseArrayInPlace } = require("./exercises")
 
 describe('reverseArrayInPlace',() => {
